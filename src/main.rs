@@ -1,7 +1,10 @@
+#![feature(proc_macro_hygiene, decl_macro)]
+
 use quicli::prelude::*;
 use structopt::StructOpt;
 
 mod process;
+mod serve;
 mod upload;
 
 #[derive(StructOpt, Debug)]
@@ -38,6 +41,13 @@ enum Subcommands {
         #[structopt(short = "p", long = "port")]
         port: Option<String>,
     },
+    #[structopt(name = "serve")]
+    Serve {
+        /// IP to serve on
+        ip: String,
+        #[structopt(short = "p", long = "port")]
+        port: Option<u16>,
+    },
 }
 
 fn main() -> CliResult {
@@ -45,6 +55,7 @@ fn main() -> CliResult {
     match args.subcommand {
         Subcommands::Process { file, outfile } => process::process(file, outfile),
         Subcommands::Upload { file, ip, port } => upload::upload(file, ip, port),
+        Subcommands::Serve { ip, port } => serve::serve(ip, port),
     }
     Ok(())
 }

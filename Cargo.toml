@@ -1,6 +1,6 @@
 [package]
 name = "inkscape2servo"
-version = "0.2.0"
+version = "0.3.0"
 authors = ["Henrik Böving <hargonix@gmail.com>"]
 edition = "2018"
 
@@ -9,3 +9,8 @@ quicli = "0.4"
 structopt = "0.2"
 regex = "1.1.0"
 reqwest = "0.9"
+rocket = "0.4"
+serde_derive = "1.0"
+serde = "1.0"
+rocket_contrib = "0.4"
+serial = "0.4"
