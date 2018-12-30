@@ -1,0 +1,11 @@
+[package]
+name = "grbl-servo-client"
+version = "0.1.0"
+authors = ["hargoniX <hargonix@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+quicli = "0.4"
+structopt = "0.2"
+reqwest = "0.9"
+regex = "1.1.0"
