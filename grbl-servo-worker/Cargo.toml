@@ -6,4 +6,4 @@ edition = "2018"
 
 [dependencies]
 amqp = {version = "0.1.2", default-features = false}
-serial = "0.4"
+serialport = "3.2.0"
